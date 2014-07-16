@@ -80,7 +80,7 @@ public class Deck {
    public Card pickCard() {
 	   Random rand = new Random();
 	   int randomNum = rand.nextInt(deck.length);
-	   System.out.println("You picked: " + deck[randomNum].toString());
+	   System.out.println("You randomly picked: " + deck[randomNum].toString());
 	   return deck[randomNum];
    }
    
@@ -90,6 +90,13 @@ public class Deck {
     * @return Returns the person's card
     */
    public Card magicTrick(Card card) {
+	   System.out.println("\n\nHmm... I'm thinking...");
+		try {
+			Thread.sleep(5000);
+		} 
+		catch (InterruptedException ie) {
+			System.out.println(ie);
+		}
 	   System.out.println("Abracadabra! Here's your card: " + card.toString());
 	   return card;
    }
