@@ -17,6 +17,10 @@ public class Main {
 	/**
 	 * This main method will create and display a new deck of cards, 
 	 * then shuffle the deck three times, and display the shuffled deck.
+	 * 
+	 * Finally, it will pick a random card, display the card and the card's characteristics.
+	 * You can also uncomment the final line to see a magic trick!
+	 * 
 	 * @param args Input arguments
 	 */
 	public static void main(String[] args) {
@@ -30,16 +34,11 @@ public class Main {
 		
 		deck.view();
 		
-	/**
 		Card randomCard = deck.pickCard();
-		System.out.println("Hmm... I'm thinking...");
-		try {
-			Thread.sleep(5000);
-		} 
-		catch (InterruptedException ie) {
-			System.out.println(ie);
-		}
-		deck.magicTrick(randomCard);
-	*/
+		System.out.println("Value: " + randomCard.getValueAsString() + " | " 
+				+ "Suit: " + randomCard.getSuitAsString() + " | "
+				+ "Color: " + randomCard.getColor());
+	
+		//deck.magicTrick(randomCard);
 	}
 }
