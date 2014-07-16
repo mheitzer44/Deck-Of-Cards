@@ -61,7 +61,20 @@ public class Card {
       return value;
    }
    
-  
+   /**
+    * Gets the color of a card: RED or BLACK
+    * @return Returns the color
+    */
+   public String getColor() {
+	   switch ( suit ) {
+	      case SPADES:   return "BLACK";
+	      case HEARTS:   return "RED";
+	      case DIAMONDS: return "RED";
+	      case CLUBS:    return "BLACK";
+	      default:       return "JOKER";
+	   }
+   }
+     
    /**
     * Returns the toString version of suit
     * @return Returns a string version of the suit
