@@ -33,18 +33,24 @@ public class Deck {
          deck = new Card[54];
       else
          deck = new Card[52];
-      int cardCt = 0;
-      for ( int suit = 0; suit <= 3; suit++ ) {
-         for ( int value = 1; value <= 13; value++ ) {
-            deck[cardCt] = new Card(value,suit);
-            cardCt++;
-         }
-      }
+      
+      createDeck();
+      
       if (includeJokers) {
-         deck[52] = new Card(); // Create a Joker
-         deck[53] = new Card(); // Create a Joker
+         deck[52] = new Card(0, 0); // Create a Joker
+         deck[53] = new Card(0, 0); // Create a Joker
       }
       cardsUsed = 0; 
+   }
+   
+   public void createDeck() {
+	   int cardCt = 0;
+	      for ( int suit = 1; suit <= 4; suit++ ) {
+	         for ( int value = 1; value <= 13; value++ ) {
+	            deck[cardCt] = new Card(value,suit);
+	            cardCt++;
+	         }
+	      }
    }
    
    /**
@@ -77,10 +83,9 @@ public class Deck {
     * Randomly chooses a card from the deck.
     * @return Returns a random card from the deck
     */
-   public Card pickCard() {
+   public Card drawCard() {
 	   Random rand = new Random();
 	   int randomNum = rand.nextInt(deck.length);
-	   System.out.println("You randomly picked: " + deck[randomNum].toString());
 	   return deck[randomNum];
    }
    
