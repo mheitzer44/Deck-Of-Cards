@@ -8,7 +8,7 @@
  * A deck can be shuffled, dealt, and/or viewed in order.
  * 
  * @author Matt Heitzer | mheitzer44@gmail.com
- * @date 07.15.2014
+ * @date 07.23.2014
  *
  */
 
@@ -34,10 +34,8 @@ public class Main {
 		
 		deck.view();
 		
-		Card randomCard = deck.pickCard();
-		System.out.println("Value: " + randomCard.getValueAsString() + " | " 
-				+ "Suit: " + randomCard.getSuitAsString() + " | "
-				+ "Color: " + randomCard.getColor());
+		Card randomCard = deck.drawCard();
+		System.out.println("You randomly picked: " + randomCard.toString());
 	
 		//deck.magicTrick(randomCard);
 	}
